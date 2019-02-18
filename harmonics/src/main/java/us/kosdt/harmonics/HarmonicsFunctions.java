@@ -12,15 +12,13 @@ public class HarmonicsFunctions {
         double p = 1.0/(1-n);             // Maps [ 0,1] to [1,infinity]
         double q = 1.0+n;                 // Maps [-1,0] to [0,1]
         double reducedX = x % 1;
-        /*
         double amplitude = 1.0;           // Harmonics close to 0 are 100% amplitude
         if (n<=0) {
-            amplitude -= Math.pow(x,p); // Curve down
+            amplitude -= Math.pow(reducedX,p); // Curve down
         } else {
-            amplitude -= Math.pow(x,q); // Curve up
+            amplitude -= Math.pow(reducedX,q); // Curve up
         }
-        */
-        double amplitude = 1-Math.pow(reducedX, p)*((1+Math.signum(n))/2)-Math.pow(reducedX,q)*((1-Math.signum(n))/2);
+        //double amplitude = 1-Math.pow(reducedX, p)*((1+Math.signum(n))/2)-Math.pow(reducedX,q)*((1-Math.signum(n))/2);
         return amplitude;
     }
 
