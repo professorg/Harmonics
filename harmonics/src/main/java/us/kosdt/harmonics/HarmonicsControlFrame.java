@@ -194,7 +194,7 @@ public class HarmonicsControlFrame {
         int samples = (int)(SAMPLE_RATE/variables.frequency);
         byte[] waveformBytes = new byte[samples];
         for (int x = 0; x < samples; x++) {
-            double y = variables.totalAmplitude*HarmonicsFunctions.harmonicSum(variables, (double)x/samples, samples);
+            double y = variables.totalAmplitude*HarmonicsFunctions.harmonicSum(variables, x, samples);
             waveformBytes[x] = doubleToByte(y);
         }
         return waveformBytes;
